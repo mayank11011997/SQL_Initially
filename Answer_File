@@ -1,1 +1,14 @@
-
+# These queries were run on Mysql then paste here with the question in comment 
+#Display the number of states present in the LocationTable.
+use mayanktest;
+select distinct state from location;
+#How many products are of regular type?
+select count(*) as Regular_type_products
+from product where type = 'regular' ;
+#How much spending has been done on marketing of product ID 1?
+select productId, count(Marketing) as Spending_on_marketing
+from fact where ProductId = 1;
+#What is the minimum sales of a product?
+select min(sales) from fact;
+#Display the max Cost of Good Sold (COGS)
+select max(COGS) from fact;
