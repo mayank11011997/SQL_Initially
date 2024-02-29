@@ -1,4 +1,3 @@
-# These queries were run on Mysql then paste here with the question in comment 
 #Display the number of states present in the LocationTable.
 use mayanktest;
 select distinct state from location;
@@ -12,3 +11,20 @@ from fact where ProductId = 1;
 select min(sales) from fact;
 #Display the max Cost of Good Sold (COGS)
 select max(COGS) from fact;
+# As in the given tables the spases are given because of which querry throwing error every time so i am altering the column name byremoving the space
+#alter table fact rename column `Total Expenses` to TotalExpenses;
+#alter table `fact` change `TotalExpenses` `Total Expenses` int null;
+alter table `fact` change `Total Expenses` `TotalExpenses` int null; 
+alter table `fact` change `Budget Profit` `BudgetProfit` int null; 
+alter table `fact` change `Budget COGS` `BudgetCOGS` int null;
+alter table `fact` change `Budget Margin` `BudgetMargin` int null;
+alter table `fact` change `Budget Sales` `BudgetSales` int null;
+alter table `fact` change `Area Code` `AreaCode` int null;
+alter table `product` change `Product Type` `ProductType` text null;
+alter table `location` change `Area Code` `AreaCode` int null;
+alter table `location` change `Market Size` `MarketSize` text null;
+--  Display the details of the product where product type is coffee.
+--  select * from fact 
+--  join product on fact.productid = product.productid 
+--  where producttype = 'coffee';
+ #Display the details where total expenses are greater than 40.
