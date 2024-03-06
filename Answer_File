@@ -1,4 +1,3 @@
-
 use mayanktest;
 #Display the number of states present in the LocationTable.
 select distinct state from location;
