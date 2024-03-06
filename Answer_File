@@ -47,3 +47,10 @@ SELECT productid, AVG(BudgetMargin) AS average_budget_margin
 FROM fact
 GROUP BY ProductId
 HAVING AVG(BudgetMargin) > 100;
+#What is the total sales done on date 2010-01-01?
+select sum(sales) as total_sales
+from fact
+where Date = '2010-01-01';
+#Display the average total expense of each product ID on an individual date
+select avg(totalexpenses) as avg_total_expense, productid,date
+from fact group by date,productid;
