@@ -64,3 +64,8 @@ join location on fact.AreaCode = location.AreaCode;
 select profit,sales,state from fact
 join location on fact.AreaCode = Location.AreaCode
 order by state;
+#Find the state wise profit and sales along with the productname.
+select profit,sales,state,Product from fact
+join location on fact.AreaCode = Location.AreaCode
+join product on fact.ProductId = Product.ProductId
+order by state;
