@@ -69,3 +69,10 @@ select profit,sales,state,Product from fact
 join location on fact.AreaCode = Location.AreaCode
 join product on fact.ProductId = Product.ProductId
 order by state;
+#Find the maximum profit along with the product ID and producttype.
+SELECT f.ProductID, 
+       p.ProductType,
+       MAX(f.Profit) AS MaximumProfit
+FROM Fact f
+JOIN Product p ON f.ProductID = p.ProductID
+GROUP BY f.ProductID, p.ProductType;
