@@ -54,3 +54,7 @@ where Date = '2010-01-01';
 #Display the average total expense of each product ID on an individual date
 select avg(totalexpenses) as avg_total_expense, productid,date
 from fact group by date,productid;
+ #Display the table with the following attributes such as date, productID, product_type, product, sales, profit, state, area_code
+select Date,ProductType,fact.ProductId,Product,Sales,Profit,fact.AreaCode,State from fact 
+join product on fact.productid = product.productid
+join location on fact.AreaCode = location.AreaCode;
