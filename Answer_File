@@ -58,3 +58,9 @@ from fact group by date,productid;
 select Date,ProductType,fact.ProductId,Product,Sales,Profit,fact.AreaCode,State from fact 
 join product on fact.productid = product.productid
 join location on fact.AreaCode = location.AreaCode;
+#Display the rank without any gap to show the sales wise rank.
+#Have not understood the question
+#Find the state wise profit and sales.
+select profit,sales,state from fact
+join location on fact.AreaCode = Location.AreaCode
+order by state;
